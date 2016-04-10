@@ -1,0 +1,7 @@
+//Move selected objects up 1.5 units
+global proc moveSelectedItems() {
+	string $selectedItems[] = `ls -sl`;
+	move -r 0 1.5 0;
+	print "script complete";
+}
+moveSelectedItems();

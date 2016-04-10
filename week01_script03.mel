@@ -1,0 +1,10 @@
+global proc selectedNodesCount(){
+	string $selectedItems[] = `ls -sl`;
+	int $counter = 0;
+	for($item in $selectedItems){
+		$counter++;
+	}
+	print ("\nuser has selected " + $counter + " objects/nodes\n");
+}
+
+selectedNodesCount();

@@ -1,0 +1,22 @@
+global proc selectedJointMeshTransformCount(){
+	string $selectedItems[] = `ls -sl`;
+	int $jointsCounter = 0;
+    int $meshCounter = 0;
+    int $transformsCounter = 0;
+	for($item in $selectedItems){
+		if(nodeType($item) == "joint"){
+			$jointsCounter++;
+		} 
+		if(nodeType($item) == "mesh"){
+			$meshCounter++;
+		}
+		if(nodeType($item) == "transform"){
+			$transformsCounter++;
+		}
+	}
+	print ("\nuser has selected " + $jointsCounter + " joint(s), "
+		    + $meshCounter + " mesh(es), "
+		 	+ "and " + $transformsCounter + " transforms!\n");
+}
+
+selectedJointMeshTransformCount();
