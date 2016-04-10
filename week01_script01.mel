@@ -1,0 +1,28 @@
+//Create and name 3 polysphere 5 units apart in the X-axis
+polySphere -r 1 -n poly1;
+polySphere -r 1 -n poly2;
+move -r 5 0 0;
+polySphere -r 1 -n poly3;
+move -r 10 0 0;
+
+//Create and name 3 polycubes 3 units in the Y-axis above the polyspheres
+//Assign Lamber shaders and set the color attribute
+//Red Cube
+polyCube -w 1 -h 1 -d 1 -n cube1; 
+move -r 0 3 0;
+shadingNode -asShader lambert;
+setAttr "lambert2.color" -type double3 1 0 0;
+assignSG lambert2 cube1;
+//Green Cube
+polyCube -w 1 -h 1 -d 1 -n cube2; 
+move -r 5 3 0;
+shadingNode -asShader lambert;
+setAttr "lambert3.color" -type double3 0 1 0;
+assignSG lambert3 cube2;
+//Blue Cube
+polyCube -w 1 -h 1 -d 1 -n cube3; 
+move -r 10 3 0;
+shadingNode -asShader lambert;
+setAttr "lambert4.color" -type double3 0 0 1;
+assignSG lambert4 cube3;
+
